@@ -1,0 +1,36 @@
+title:
+  calendar: Calendar
+
+label:
+  calendarView: Calendar View
+  month: Month
+  week: Week
+  day: Day
+  agenda: Agenda
+  today: Today
+  back: Back
+  next: Next
+  eventName: Event name
+  selectAColor: Select a color
+  cancel: CANCEL
+  discard: DISCARD
+  edit: EDIT
+  save: SAVE
+  home: Home
+  dashboard: Dashboard
+  inbox: Inbox
+  products: Products
+  invoices: Invoices
+  customers: Customers
+  chatRoom: Chat Room
+  calendar: Calendar
+  helpCenter: Help Center
+  settings: Settings
+
+placeholder:
+  eventName: Event name
+  notes: take my PC with me
+  search: Search transactions, invoices or help
+
+validation:
+  required: This field is mandatory.
