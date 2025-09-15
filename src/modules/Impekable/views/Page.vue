@@ -100,6 +100,7 @@ const calendarOptions = computed(() => ({
   selectMirror: true,
   dayMaxEvents: true,
   weekends: true,
+  nowIndicator: true,
   allDayText: "all day",
   views: {
     timeGridWeek: {
