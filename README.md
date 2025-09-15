@@ -10,15 +10,7 @@ Install project dependencies:
 npm install
 ```
 
-### 2. Setup Environment Variables
-
-Create a local environment file by copying the example:
-
-```bash
-cp .env.local.example .env.local
-```
-
-### 3. Run the Application (Development Mode)
+### 2. Run the Application (Development Mode)
 
 Start the application in development mode:
 
@@ -62,18 +54,8 @@ npm run test:unit
 Prepare the app for production:
 
 ```bash
-# Create the production environment file
-cp .env.example .env
-
-# Replace environment placeholders with actual values
-sed -i "s|{{DOMAIN}}|$FE_URL|g" .env              # Set VITE_DOMAIN
-sed -i "s|{{API_DOMAIN}}|$API_URL|g" .env         # Set VITE_API_DOMAIN
-
 # Build the app
 npm run build
-
-# Copy the built files to the deployment directory
-cp -r dist/. $DEPLOY_PATH
 ```
 
 ## Run the Built Application (Production Mode)
