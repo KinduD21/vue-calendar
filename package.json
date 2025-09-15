@@ -1,7 +1,7 @@
 {
   "name": "vueless-quickstart-ts",
   "version": "0.0.1",
-  "private": true,
+  "private": false,
   "type": "module",
   "scripts": {
     "dev": "vite --host --port 4310",
@@ -12,7 +12,8 @@
     "lint:ci": "eslint --no-fix --max-warnings=0",
     "ts:check": "vue-tsc --build --force",
     "test": "vitest",
-    "test:ci": "vitest --run"
+    "test:ci": "vitest --run",
+    "deploy": "vite build && gh-pages -d dist"
   },
   "dependencies": {
     "@fullcalendar/daygrid": "^6.1.19",
@@ -45,6 +46,7 @@
     "@vue/test-utils": "^2.4.6",
     "eslint": "^9.31.0",
     "eslint-plugin-vue": "^10.3.0",
+    "gh-pages": "^6.3.0",
     "globals": "^16.3.0",
     "prettier": "^3.6.2",
     "rollup-plugin-visualizer": "^6.0.3",

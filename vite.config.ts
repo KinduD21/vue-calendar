@@ -22,6 +22,7 @@ export default ({ mode }: ConfigEnv) => {
   };
 
   return defineConfig({
+    base: "/vue-calendar/",
     plugins: [
       Vue(),
       Yaml(),
