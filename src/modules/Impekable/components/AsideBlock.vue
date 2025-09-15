@@ -1,5 +1,5 @@
 <template>
-  <UCol class="bg-[#43425d] h-[-webkit-fill-available]">
+  <UCol class="bg-[#43425d] fixed left-0 top-0 h-screen w-[300px] z-10">
     <UHeader
       label="impekable"
       size="xs"

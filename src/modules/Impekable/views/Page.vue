@@ -2,7 +2,7 @@
   <URow block gap="none">
     <AsideBlock />
 
-    <UCol block gap="none" class="bg-[#f0f0f7]">
+    <UCol block gap="none" class="bg-[#f0f0f7] pl-[300px]">
       <PageHeader />
 
       <UHeader :label="t('title.calendar')" size="lg" class="pt-10 px-20" />
