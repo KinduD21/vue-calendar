@@ -115,6 +115,7 @@ const eventForm = ref({
 });
 
 const selectedColor = ref("blue");
+const userModifiedDate = ref(false);
 
 const colors = {
   grayscale: "bg-grayscale",
@@ -176,6 +177,7 @@ function resetForm() {
   eventForm.value.notes = "";
   eventForm.value.color = "";
   selectedColor.value = "blue";
+  userModifiedDate.value = false;
 }
 
 function saveEvent() {
@@ -186,9 +188,15 @@ function saveEvent() {
   let startDate = eventForm.value.date;
 
   if (startDate instanceof Date) {
-    startDate = startDate.toISOString().split("T")[0];
-  } else if (typeof startDate === "string" && !eventForm.value.time && startDate.includes("T")) {
-    startDate = startDate.split("T")[0];
+    const year = startDate.getFullYear();
+    const month = String(startDate.getMonth() + 1).padStart(2, "0");
+    const day = String(startDate.getDate()).padStart(2, "0");
+
+    startDate = `${year}-${month}-${day}`;
+  } else if (typeof startDate === "string") {
+    if (startDate.includes("T")) {
+      startDate = startDate.split("T")[0];
+    }
   }
 
   const eventData = {
@@ -243,8 +251,13 @@ watch(
 watch(
   () => props.selectedDate,
   (newDate) => {
-    if (!props.isEditing) eventForm.value.date = newDate;
+    if (!props.isEditing && !userModifiedDate.value) eventForm.value.date = newDate;
   },
+);
+
+watch(
+  () => eventForm.value.date,
+  () => (userModifiedDate.value = true),
 );
 
 watch(
